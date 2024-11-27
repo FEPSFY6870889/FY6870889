@@ -145,7 +145,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 var button = document.getElementById("colorButton");
 
   // Function to change the button color
-function changeColor() 
+function changeColor(){ 
   // Generate a random color (hexadecimal)
 var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
 
@@ -154,14 +154,6 @@ var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
   }
 
   //Add a click event listner to the button
-  button.style.backgroundColour = randomColor;
-  }
-
-  //Add a click event listener to the button 
-  button.style.backgroundColor = randomColor;
-  }
-
-  // Add a click event listener to the button
   button.addEventListener("click", changeColor);
 </script>
  </body>
