@@ -155,51 +155,55 @@
 <p id="date&time"></p>
 
 <script>
- 
-//Javascript to display the date and time on my webpag
 
-  const d = new Date()
-  document.getElementById("date&time").innerHTML = d
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .result {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Word Counter</h1>
+  <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+  <div class="result">
+    <p><strong>Word Count:</strong> <span id="wordCount">0</span></p>
+    <p><strong>Character Count:</strong> <span id="charCount">0</span></p>
+  </div>
 
-</script>
-# word_counter.py
-import re
-from collections import Counter
+  <script>
+    const textInput = document.getElementById('textInput');
+    const wordCountDisplay = document.getElementById('wordCount');
+    const charCountDisplay = document.getElementById('charCount');
 
-def count_words(text):
-    """
-    Counts the occurrences of each word in the given text.
-    :param text: The input string
-    :return: Dictionary with words as keys and their counts as values
-    """
-    # Normalize text: convert to lowercase and remove punctuation
-    words = re.findall(r'\b\w+\b', text.lower())
-    return Counter(words)
+    textInput.addEventListener('input', () => {
+      const text = textInput.value.trim();
 
-def display_word_count(word_count):
-    """
-    Displays the word count in a readable format.
-    :param word_count: Dictionary of word counts
-    """
-    print("Word Frequencies:")
-    for word, count in word_count.most_common():
-        print(f"{word}: {count}")
+      // Count words
+      const words = text.match(/\b\w+\b/g) || []; // Match words
+      wordCountDisplay.textContent = words.length;
 
-if __name__ == "__main__":
-    # Input text
-    text = input("Enter text to analyze (or provide a file path): ")
-
-    # Check if input is a file path
-    try:
-        with open(text, 'r') as file:
-            text = file.read()
-    except FileNotFoundError:
-        pass  # If it's not a file path, treat input as text
-
-    # Count words
-    word_count = count_words(text)
-
-    # Display results
-    display_word_count(word_count)
+      // Count characters
+      charCountDisplay.textContent = text.length;
+    });
+  </script>
+</body>
+</html>
 
   
