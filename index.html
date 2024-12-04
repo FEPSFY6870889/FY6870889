@@ -162,6 +162,44 @@
   document.getElementById("date&time").innerHTML = d
 
 </script>
+# word_counter.py
+import re
+from collections import Counter
 
+def count_words(text):
+    """
+    Counts the occurrences of each word in the given text.
+    :param text: The input string
+    :return: Dictionary with words as keys and their counts as values
+    """
+    # Normalize text: convert to lowercase and remove punctuation
+    words = re.findall(r'\b\w+\b', text.lower())
+    return Counter(words)
+
+def display_word_count(word_count):
+    """
+    Displays the word count in a readable format.
+    :param word_count: Dictionary of word counts
+    """
+    print("Word Frequencies:")
+    for word, count in word_count.most_common():
+        print(f"{word}: {count}")
+
+if __name__ == "__main__":
+    # Input text
+    text = input("Enter text to analyze (or provide a file path): ")
+
+    # Check if input is a file path
+    try:
+        with open(text, 'r') as file:
+            text = file.read()
+    except FileNotFoundError:
+        pass  # If it's not a file path, treat input as text
+
+    # Count words
+    word_count = count_words(text)
+
+    # Display results
+    display_word_count(word_count)
 
   
