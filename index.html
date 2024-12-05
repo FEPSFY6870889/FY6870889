@@ -163,42 +163,44 @@
 
    </script>
 
- <!-- Date and Time Section -->
-  <h3>Current Date and Time</h3>
-  <p id="date&time"></p>
+     <script>
+     // Function to display the current date and time
+  function showDateTime() {
+    var currentDate = new Date();
+    var formattedDate = currentDate.toLocaleString();  // This will format the date and time
+    document.getElementById("date&time").innerHTML = formattedDate;  // Insert the date and time into the paragraph with the id "date&time"
+  }
 
-  <!-- Word Counter Section -->
-  <h3>Word Counter (Total Words in Webpage)</h3>
-  <p>Word Count: <span id="wordCount">0</span></p>
+  // Call the function once to display the current date and time when the page loads
+  window.onload = showDateTime;
+</script>
 
-  <script>
-    // Date and Time
-    function updateDateTime() {
-      const now = new Date();
-      const dateString = now.toLocaleString();
-      document.getElementById("date&time").textContent = dateString;
-    }
+     <script>
+      // Function to count the words in specific sections
+      function countWordsInSections() {
+        // Get the text content of specific sections
+        var abstractText = document.getElementById("abstract").innerText;
+        var introductionText = document.getElementById("introduction").innerText;
+        var mainBodyText = document.getElementById("mainbody").innerText;
+        var conclusionText = document.getElementById("conclusion").innerText;
 
-    // Update date and time every second
-    setInterval(updateDateTime, 1000);  // Update every second
-    updateDateTime();  // Initial call to show the time immediately
+        // Combine the text from all sections
+        var allText = abstractText + " " + introductionText + " " + mainBodyText + " " + conclusionText;
 
-    // Word Counter (for entire webpage content)
-    function countWordsInPage() {
-      const bodyText = document.body.innerText;  // Get the visible text from the page
-      const words = bodyText.trim().split(/\s+/); // Split by whitespace (spaces, newlines, etc.)
-      const wordCount = words.length;
-      document.getElementById('wordCount').textContent = wordCount;
-    }
+        // Count the words by splitting on spaces
+        var words = allText.split(/\s+/);
+        var wordCount = words.length;
 
-    // Count words when the page loads
-    window.onload = countWordsInPage;
+        // Display the word count
+        document.getElementById("wordCounter").innerHTML = "Word Count (Abstract, Introduction, Main Body, Conclusion): " + wordCount;
+      }
 
-    
-  </script>
+      // Call the function when the page loads
+      window.onload = countWordsInSections;
+    </script>
 
-</body>
+  </body>
 
-</html> 
+</html>
 
 
