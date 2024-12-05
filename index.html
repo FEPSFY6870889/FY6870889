@@ -168,27 +168,32 @@
       // Function to display the current date and time
       function showDateTime() {
         var currentDate = new Date();
-        var formattedDate = currentDate.toLocaleString(); 
-        document.getElementById("date&time").innerHTML = formattedDate;  
+        var formattedDate = currentDate.toLocaleString();
+        document.getElementById("date&time").innerHTML = formattedDate;
       }
 
-      // Function to count the words in the webpage
-      function countWords() {
-        var textContent = document.body.innerText;
-        var words = textContent.split(/\s+/);
+      // Function to count the words in specific sections (Abstract, Introduction, Main Body, Conclusion)
+      function countWordsInSections() {
+        var abstractText = document.getElementById("abstract").innerText;
+        var introductionText = document.getElementById("introduction").innerText;
+        var mainBodyText = document.getElementById("mainbody").innerText;
+        var conclusionText = document.getElementById("conclusion").innerText;
+
+        var allText = abstractText + " " + introductionText + " " + mainBodyText + " " + conclusionText;
+        var words = allText.split(/\s+/);
         var wordCount = words.length;
-        document.getElementById("wordCounter").innerHTML = "Word Count: " + wordCount;
+
+        document.getElementById("wordCounter").innerHTML = "Word Count (Abstract, Introduction, Main Body, Conclusion): " + wordCount;
       }
 
-      window.onload = function() {
+      window.onload = function () {
         showDateTime();
-        countWords();
+        countWordsInSections();
       };
     </script>
 
   </body>
-
 </html>
-  
+     
 
 
