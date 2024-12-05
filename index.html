@@ -1,88 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENG0018 Computer Laboratory</title>
+    <style>
+      /* Background and Overall Styling */
+      body {
+        font-family: "Calibri", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg, #b3e5fc, #81d4fa, #4fc3f7);
+        color: #333;
+        overflow-x: hidden;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ENG0018 Computer Laboratory 2024/2025</title>
-  <style>
-    /* General body styles */
-    body {
-      background-color: #d8f3fc; /* Light blue background */
-      background-image: url('waves-pattern.png'); /* Optional wave pattern */
-      background-repeat: repeat-x; /* Repeat horizontally */
-      background-size: 100%; /* Fit background nicely */
-      color: #003366; /* Dark blue text */
-      margin: 20px;
-      font-family: 'Calibri', sans-serif;
-    }
+      /* Banner */
+      header {
+        text-align: center;
+        padding: 20px;
+        background-color: #0288d1;
+        color: white;
+        position: relative;
+      }
 
-    /* Header styles */
-    img.banner {
-      width: 100%;
-      height: auto;
-    }
+      header img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+      }
 
-    h1, h2, h3 {
-      color: #00274d; /* Deep blue for headings */
-    }
+      header h1 {
+        font-size: 2.5em;
+        margin: 10px 0;
+        text-shadow: 2px 2px 5px #00000050;
+      }
 
-    h1 {
-      text-align: center;
-      font-size: 2em;
-    }
+      header h2 {
+        font-size: 1.5em;
+        font-weight: 300;
+      }
 
-    h2, h3 {
-      text-align: left;
-      margin-left: 10px;
-    }
+      /* Table of Contents Styling */
+      table {
+        margin: 30px auto;
+        border-collapse: collapse;
+        background: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 800px;
+      }
 
-    /* Table of contents styles */
-    table {
-      font-family: 'Calibri', sans-serif;
-      border-collapse: collapse;
-      width: 50%;
-      margin: 20px auto; /* Center the table */
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
+      th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
 
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 10px;
-      color: #003366;
-    }
+      th {
+        background-color: #0288d1;
+        color: white;
+        font-size: 1.2em;
+      }
 
-    tr:nth-child(even) {
-      background-color: rgba(255, 255, 255, 0.7); /* Slight transparency for rows */
-    }
+      td:hover {
+        background-color: #b3e5fc;
+        cursor: pointer;
+      }
 
-    a {
-      text-decoration: none;
-      color: #00509e; /* Link color */
-      font-weight: bold;
-    }
+      td a {
+        text-decoration: none;
+        color: #0288d1;
+        font-weight: bold;
+      }
 
-    a:hover {
-      text-decoration: underline;
-    }
+      td a:hover {
+        text-decoration: underline;
+      }
 
-    .content {
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #ffffff; /* White box for content */
-      border-radius: 10px; /* Rounded corners */
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 800px;
-    }
+      /* Sections Styling */
+      section {
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 800px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-    footer {
-      margin-top: 20px;
-      color: #003366;
-      text-align: center;
-    }
-  </style>
-</head>
+      h3 {
+        font-size: 1.8em;
+        color: #0288d1;
+        border-bottom: 2px solid #0288d1;
+        padding-bottom: 5px;
+      }
+
+      p {
+        font-size: 1.2em;
+        line-height: 1.6;
+      }
+
+      /* Aquatic Theme Decorations */
+      .decorative-fish {
+        position: absolute;
+        width: 120px;
+        opacity: 0.7;
+        animation: float 5s ease-in-out infinite;
+      }
+
+      .fish1 {
+        top: 50px;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .fish2 {
+        bottom: 100px;
+        right: 15%;
+        animation-delay: 2s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Banner -->
+    <header>
+      <img src="WebBanner2023.png" alt="Banner" />
+      <h1>ENG0018 Computer Laboratory 2024/2025</h1>
+      <h2>Student URN: 6870889</h2>
+    </header>
+
+    <!-- Table of Contents -->
+    <table>
+      <thead>
+        <tr>
+          <th>Table of Contents</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#Abstract">Abstract</a></td>
+        </tr>
+        <tr>
+          <td><a href="#Introduction">Introduction</a></td>
+        </tr>
+        <tr>
+          <td><a href="#Mainbody">Main Body</a></td>
+        </tr>
+        <tr>
+          <td><a href="#Conclusion">Conclusion</a></td>
+        </tr>
+        <tr>
+          <td><a href="#References">References</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Abstract Section -->
+    <section id="Abstract">
+      <h3>Abstract</h3>
+      <p>
+        Approximately 95% of the ocean remains unexplored, revealing the
+        significant challenges and incredible opportunities in deep-sea
+        exploration...
+      </p>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="Introduction">
+      <h3>Introduction</h3>
+      <p>
+        Designing self-navigating robots for deep-sea environments involves
+        addressing the challenges of creating autonomous underwater vehicles
+        (AUVs)...
+      </p>
+    </section>
+
+    <!-- Main Body Section -->
+    <section id="Mainbody">
+      <h3>Main Body</h3>
+      <p>
+        The oceans, covering over 70% of the Earth's surface, present
+        significant challenges for navigation in deep-sea environments...
+      </p>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="Conclusion">
+      <h3>Conclusion</h3>
+      <p>
+        In conclusion, the development of AUVs has greatly advanced with the
+        use of innovative technologies and materials...
+      </p>
+    </section>
+
+    <!-- References Section -->
+    <section id="References">
+      <h3>References</h3>
+      <p>
+        Zhang, B., Ji, D., Liu, S., Zhu, X. and Xu, W. (2023). Autonomous
+        Underwater Vehicle navigation: A review. Ocean Engineering...
+      </p>
+    </section>
+
+    <!-- Floating Fish Decorations -->
+    <img
+      src="fish1.png"
+      alt="Fish"
+      class="decorative-fish fish1"
+    />
+    <img
+      src="fish2.png"
+      alt="Fish"
+      class="decorative-fish fish2"
+    />
+  </body>
+</html>
 
 <body onload="showDateTime()">
 
