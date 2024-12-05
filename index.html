@@ -166,7 +166,125 @@
 </pre>
  </p>
      
-<p id="date&time"></p>
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <img src="WebBanner2023.png" alt="Banner" width="1200" height="300">
+    <h1><b>ENG0018 Computer Laboratory 2024/2025</b></h1>
+    <h2>Student URN: 6870889</h2>
+    <hr>
+    <h2 style="font-family:calibri;"><b>Conference paper: Investigating self-navigating robots in deep sea environments</b></h2>
+    <hr>
+    <style>
+      table {
+        font-family: ariel, sans-serif;
+        border-collapse: collapse;
+        width: 30%;
+      }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+
+      p.ex1 {
+        margin-left: 250px;
+      }
+    </style>
+  </head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/wecss/4/w3.css">
+  <style>
+    .mySlides {
+      display: none;
+    }
+  </style>
+
+  <body style="background-color:#FFFFFF;margin-left:50px;">
+
+    <p class="ex1">
+      <table>
+        <tr>
+          <th><h3>Table of contents</h3></th>
+        </tr>
+        <tr>
+          <td><a href="#Abstract">Abstract</a></td>
+        </tr>
+        <tr>
+          <td><a href="#Introduction">Introduction</a></td>
+        </tr>
+        <tr>
+          <td><a href="#MainBody">Main body</a></td>
+        </tr>
+        <tr>
+          <td><a href="#Conclusion">Conclusion</a></td>
+        </tr>
+        <tr>
+          <td><a href="#References">References</a></td>
+        </tr>
+      </table>
+      <a href="url">https://www.microsoft.com/en-gb/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook</a>
+      <hr>
+    </p>
+
+    <h3 id="Abstract">Abstract</h3>
+    <p id="abstract" class="ex1">
+      <pre>
+        Approximately 95% of the ocean remains unexplored, revealing the significant challenges and incredible opportunities in deep-sea exploration. Oceanic research 
+        imposes serious risks on robotic navigation systems due to high pressure, low temperature, lack of sunlight, limited energy resources, and absence of GPS signals 
+        (Zhang B, et al., 2023). This research article focuses on the cutting-edge navigation technology that enables autonomous underwater vehicles (AUVs) to map and 
+        manoeuvre effectively in dynamic, unstructured environments. Furthermore, it addresses the supply of power that extends mission duration, such as fuel cell solutions 
+        and innovative batteries allowing robots to operate independently for a longer period. This research aims to focus on the pros/cons of core technologies, advancing 
+        the capabilities of self-navigating robots for long-term exploration and resource assessment in remote, challenging deep-sea areas.
+      </pre>
+    </p>
+
+    <h3 id="Introduction">Introduction</h3>
+    <p id="introduction" class="ex1">
+      <pre>
+        Designing self-navigating robots for deep-sea environments involves addressing the challenges of creating autonomous underwater vehicles (AUVs) that can function 
+        independently in some of the Earth’s most extreme and remote conditions. Numerous obstacles must be overcome before AUVs can be fully perfected. The primary goal for 
+        engineers is to develop robotic systems capable of completing long-duration missions without human intervention (Wynn et al., 2014). This requires advanced technology 
+        to endure immense pressures and operate in near-total darkness. AUVs are essential for oceanographic research, resource monitoring, and environmental protection in the 
+        largely unexplored depths of the ocean (Wynn et al., 2014).
+      </pre>
+    </p>
+
+    <h3 id="MainBody">Main body</h3>
+    <p id="mainbody" class="ex1">
+      <pre>
+        The oceans, covering over 70% of the Earth's surface, present significant challenges for navigation in deep-sea environments due to the absence of GPS signals at depths 
+        beyond shallow waters (Zhang B, et al., 2023). Engineers have overcome this issue by installing high-end technology into self-navigating AUVs, such as acoustic, inertial, 
+        and visual navigation systems. Acoustic positioning is the process of sound waves that are transmitted and received between devices. Systems such as ultrasound baseline 
+        allow AUVs to determine their location at known points or surface stations (Zhang B, et al., 2023). Acoustic navigation can be divided into three main types; Long Baseline 
+        systems (LBL), Short Baseline systems and Ultra Short Baseline systems (Zhang B, et al., 2023). LBL is currently the most widely utilised acoustic navigation system due 
+        to its precision and dependability (Zhang B, et al., 2023).
+      </pre>
+    </p>
+
+    <h3 id="Conclusion">Conclusion</h3>
+    <p id="conclusion" class="ex1">
+      In my humble opinion, the development of AUVs has greatly advanced with the use of innovative technologies and materials, enabling these vehicles to perform in the most 
+      challenging deep-sea environments. From advanced navigation systems to solar-powered charging solutions, engineers are overcoming numerous obstacles to improve AUV efficiency, 
+      durability, and environmental sustainability. These advancements are vital for furthering ocean exploration and ensuring that AUVs contribute to both scientific research and 
+      environmental conservation efforts.
+    </p>
+
+    <h3 id="References">References</h3>
+    <p>
+      <pre>
+        ...
+      </pre>
+    </p>
+
+    <p id="date&time"></p>
     <p id="wordCounter"></p>
 
     <script>
@@ -179,6 +297,7 @@
 
       // Function to count words in the Abstract, Introduction, Main Body, and Conclusion sections
       function countWordsInSections() {
+        // Get the text content of each section
         var abstractText = document.getElementById("abstract").innerText;
         var introductionText = document.getElementById("introduction").innerText;
         var mainBodyText = document.getElementById("mainbody").innerText;
@@ -191,7 +310,10 @@
         var cleanedText = allText.replace(/\s+/g, ' ').trim();
 
         // Split the text into words and count the number of words
-        var words = cleanedText.split(' ');
+        var words = cleanedText.split(' ').filter(function(word) {
+          return word.length > 0; // Filter out empty strings
+        });
+        
         var wordCount = words.length;
 
         // Display the word count
@@ -206,4 +328,4 @@
 
   </body>
 
-</html>
+</html
