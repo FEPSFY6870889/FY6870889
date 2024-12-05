@@ -156,8 +156,7 @@
 
    </script>
 
-    <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -169,6 +168,11 @@
       margin-top: 20px;
       font-size: 18px;
       font-weight: bold;
+    }
+    #date-time {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: normal;
     }
     table {
       font-family: Arial, sans-serif;
@@ -216,6 +220,9 @@
   <!-- Word Counter -->
   <p id="word-counter">Word Count (after Table of Contents): 0</p>
 
+  <!-- Current Date and Time -->
+  <p id="date-time">Current Date and Time: </p>
+
   <!-- Content -->
   <h3 id="Abstract">Abstract</h3>
   <p>
@@ -232,7 +239,7 @@
     Zhang B, et al., 2023. Autonomous Navigation in the Deep Sea. Journal of Robotics Research, 34(7), pp.45-56...
   </p>
 
-  <!-- Script for Word Counter -->
+  <!-- Script for Word Counter and Date/Time -->
   <script>
     // Word Counter Functionality
     function countWords() {
@@ -250,8 +257,19 @@
       wordCounter.textContent = `Word Count (after Table of Contents): ${wordCount}`;
     }
 
-    // Run the word counter on page load
-    document.addEventListener("DOMContentLoaded", updateWordCount);
+    // Function to display current date and time
+    function showDateTime() {
+      const dateTimeElement = document.getElementById("date-time");
+      const currentDateTime = new Date();
+      const formattedDateTime = currentDateTime.toLocaleString(); // Format as a string (locale-specific)
+      dateTimeElement.textContent = `Current Date and Time: ${formattedDateTime}`;
+    }
+
+    // Run the functions on page load
+    document.addEventListener("DOMContentLoaded", function() {
+      updateWordCount();   // Update word count
+      showDateTime();      // Show current date and time
+    });
   </script>
 </body>
 </html>
