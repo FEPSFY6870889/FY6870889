@@ -6,49 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ENG0018 Computer Laboratory 2024/2025</title>
   <style>
+    /* General body styles */
     body {
-      background: linear-gradient(to bottom, #7fc8f8, #a8e0ff); /* Lighter blue gradient */
-      background-image: url('https://www.hdwallpapers.in/download/seals_are_in_body_of_water_hd_animals-HD.jpg'); /* Replace with your aquatic animal image */
-      background-repeat: no-repeat;
-      background-size: contain;
-      color: #000000; /* Darker text for better contrast */
+      background-color: #d8f3fc; /* Light blue background */
+      background-image: url('waves-pattern.png'); /* Optional wave pattern */
+      background-repeat: repeat-x; /* Repeat horizontally */
+      background-size: 100%; /* Fit background nicely */
+      color: #003366; /* Dark blue text */
       margin: 20px;
       font-family: 'Calibri', sans-serif;
     }
 
+    /* Header styles */
     img.banner {
       width: 100%;
       height: auto;
     }
 
     h1, h2, h3 {
-      color: #003366; /* Dark blue text for headings */
+      color: #00274d; /* Deep blue for headings */
     }
 
+    h1 {
+      text-align: center;
+      font-size: 2em;
+    }
+
+    h2, h3 {
+      text-align: left;
+      margin-left: 10px;
+    }
+
+    /* Table of contents styles */
     table {
       font-family: 'Calibri', sans-serif;
       border-collapse: collapse;
-      width: 30%;
-      margin: 20px 0;
+      width: 50%;
+      margin: 20px auto; /* Center the table */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     td, th {
       border: 1px solid #dddddd;
       text-align: left;
-      padding: 8px;
-      color: #000000;
+      padding: 10px;
+      color: #003366;
     }
 
     tr:nth-child(even) {
-      background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white for table rows */
+      background-color: rgba(255, 255, 255, 0.7); /* Slight transparency for rows */
     }
 
-    .ex1 {
-      margin-left: 50px;
+    a {
+      text-decoration: none;
+      color: #00509e; /* Link color */
+      font-weight: bold;
     }
 
-    .mySlides {
-      display: none;
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff; /* White box for content */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
     }
 
     footer {
