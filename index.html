@@ -146,7 +146,7 @@
 
  <h3>
   <h3 id="Conclusion">Conclusion</h3>
-   In conclusion, the development of AUVs has greatly advanced with the use of innovative technologies and materials, enabling these vehicles to perform in the most 
+   In my humble opinion, the development of AUVs has greatly advanced with the use of innovative technologies and materials, enabling these vehicles to perform in the most 
    challenging deep-sea environments. From advanced navigation systems to solar-powered charging solutions, engineers are overcoming numerous obstacles to improve
    AUV efficiency, durability, and environmental sustainability. These advancements are vital for furthering ocean exploration and ensuring that AUVs contribute 
    to both scientific research and environmental conservation efforts.
@@ -157,45 +157,34 @@
    
 </pre>
 
-  </p>
+        <p id="date&time"></p>
+    <p id="wordCounter"></p>
 
-<p id="wordCounter"></p>
-<script>
-     // Function to display the current date and time
-  function showDateTime() {
-    var currentDate = new Date();
-    var formattedDate = currentDate.toLocaleString();  // This will format the date and time
-    document.getElementById("date&time").innerHTML = formattedDate;  // Insert the date and time into the paragraph with the id "date&time"
-  }
-
-  // Call the function once to display the current date and time when the page loads
-  window.onload = showDateTime;
-
-      // Function to count the words in specific sections
-      function countWordsInSections() {
-        // Get the text content of specific sections
-        var abstractText = document.getElementById("abstract").innerText;
-        var introductionText = document.getElementById("introduction").innerText;
-        var mainBodyText = document.getElementById("mainbody").innerText;
-        var conclusionText = document.getElementById("conclusion").innerText;
-
-        // Combine the text from all sections
-        var allText = abstractText + " " + introductionText + " " + mainBodyText + " " + conclusionText;
-
-        // Count the words by splitting on spaces
-        var words = allText.split(/\s+/);
-        var wordCount = words.length;
-
-        // Display the word count
-        document.getElementById("wordCounter").innerHTML = "Word Count (Abstract, Introduction, Main Body, Conclusion): " + wordCount;
+    <script>
+      // Function to display the current date and time
+      function showDateTime() {
+        var currentDate = new Date();
+        var formattedDate = currentDate.toLocaleString(); 
+        document.getElementById("date&time").innerHTML = formattedDate;  
       }
 
-      // Call the function when the page loads
-      window.onload = countWordsInSections;
+      // Function to count the words in the webpage
+      function countWords() {
+        var textContent = document.body.innerText;
+        var words = textContent.split(/\s+/);
+        var wordCount = words.length;
+        document.getElementById("wordCounter").innerHTML = "Word Count: " + wordCount;
+      }
+
+      window.onload = function() {
+        showDateTime();
+        countWords();
+      };
     </script>
 
   </body>
 
 </html>
+  
 
 
