@@ -156,7 +156,10 @@
 
    </script>
 
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -167,31 +170,88 @@
       font-size: 18px;
       font-weight: bold;
     }
-    textarea {
-      width: 100%;
-      height: 200px;
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 30%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    pre, p {
       font-size: 16px;
-      padding: 10px;
     }
   </style>
 </head>
 <body>
+  <!-- Banner -->
+  <img src="WebBanner2023.png" alt="ENG0018 Laboratory Banner" width="1200" height="300">
+
+  <!-- Title and Table of Contents -->
   <h1>ENG0018 Computer Laboratory 2024/2025</h1>
-  <h2>Word Counter Tool</h2>
+  <h2>Student URN: 6870889</h2>
+  <h2 style="font-family: calibri;"><b>Conference Paper: Investigating Self-Navigating Robots in Deep Sea Environments</b></h2>
+  <hr>
+  <table>
+    <tr>
+      <th><h3>Table of Contents</h3></th>
+    </tr>
+    <tr>
+      <td><a href="#Abstract">Abstract</a></td>
+    </tr>
+    <tr>
+      <td><a href="#Analysis_and_discussion">Analysis and Discussion</a></td>
+    </tr>
+    <tr>
+      <td><a href="#References">References</a></td>
+    </tr>
+  </table>
+  <hr>
 
-  <textarea id="text-area" placeholder="Type or paste your text here..."></textarea>
-  <p id="word-counter">Word Count: 0</p>
+  <!-- Word Counter -->
+  <p id="word-counter">Word Count (after Table of Contents): 0</p>
 
+  <!-- Content -->
+  <h3 id="Abstract">Abstract</h3>
+  <p>
+    Approximately 95% of the ocean remains unexplored, revealing the significant challenges and incredible opportunities in deep-sea exploration...
+  </p>
+
+  <h3 id="Analysis_and_discussion">Analysis and Discussion</h3>
+  <p>
+    Designing self-navigating robots for deep-sea environments involves addressing the challenges of creating autonomous underwater vehicles (AUVs)...
+  </p>
+
+  <h3 id="References">References</h3>
+  <p>
+    Zhang B, et al., 2023. Autonomous Navigation in the Deep Sea. Journal of Robotics Research, 34(7), pp.45-56...
+  </p>
+
+  <!-- Script for Word Counter -->
   <script>
     // Word Counter Functionality
-    const textArea = document.getElementById('text-area');
-    const wordCounter = document.getElementById('word-counter');
+    function countWords() {
+      const content = document.body.innerHTML; // Get full content of the body
+      const startElement = document.querySelector("h3#Abstract"); // Starting point
+      const startIndex = content.indexOf(startElement.outerHTML); // Find where to start counting
+      const textToCount = content.substring(startIndex); // Extract text after the start point
+      const words = textToCount.replace(/<[^>]+>/g, "").trim().split(/\s+/); // Remove HTML tags and split words
+      return words.filter(word => word).length; // Filter empty strings and count words
+    }
 
-    textArea.addEventListener('input', function () {
-      const text = textArea.value.trim(); // Trim to avoid leading/trailing spaces
-      const wordCount = text === "" ? 0 : text.split(/\s+/).length; // Split by spaces
-      wordCounter.textContent = `Word Count: ${wordCount}`;
-    });
+    function updateWordCount() {
+      const wordCounter = document.getElementById("word-counter");
+      const wordCount = countWords();
+      wordCounter.textContent = `Word Count (after Table of Contents): ${wordCount}`;
+    }
+
+    // Run the word counter on page load
+    document.addEventListener("DOMContentLoaded", updateWordCount);
   </script>
 </body>
 </html>
