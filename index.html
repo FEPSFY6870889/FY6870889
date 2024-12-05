@@ -1,4 +1,118 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Lato font -->
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Lato', sans-serif;
+      background: linear-gradient(to right, #f4f6f7, #d8e1e8); /* Light pastel gradient */
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8; /* Increased line height for better readability */
+    }
+
+    h3 {
+      color: #2c3e50; /* Darker, clearer gray-blue for headings */
+      font-size: 2.4em; /* Larger heading size for prominence */
+      margin-top: 30px;
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.25em; /* Slightly larger body text */
+      line-height: 1.8em;
+      margin-bottom: 20px;
+      text-align: justify;
+      color: #2c3e50; /* Dark text for clarity */
+    }
+
+    /* Table of contents styling */
+    .toc {
+      width: 100%;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.9); /* Light background for the Table of Contents */
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .toc a {
+      display: block;
+      padding: 12px;
+      font-size: 1.3em; /* Slightly larger text for TOC links */
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .toc a:hover {
+      background-color: #f0f4f8; /* Very light hover effect */
+      color: #2980b9;
+    }
+
+    /* Table styling */
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 18px;
+      text-align: left;
+      font-size: 1.15em; /* Slightly larger text for table cells */
+    }
+
+    th {
+      background-color: #2980b9; /* Soft blue for table header */
+      color: white;
+      font-size: 1.3em;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Buttons */
+    button {
+      padding: 12px 25px;
+      background-color: #2980b9; /* Soft blue button */
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1.2em; /* Larger font for buttons */
+      margin: 20px 0;
+    }
+
+    button:hover {
+      background-color: #1f3d63;
+    }
+
+    /* Last Updated section */
+    #last-updated {
+      font-size: 1.25em; /* Slightly larger text for the updated time */
+      color: #7f8c8d;
+      margin-top: 10px;
+    }
+
+    /* Word count section */
+    #totalWordCount {
+      font-size: 1.3em; /* Larger font for total word count */
+      font-weight: bold;
+      color: #2980b9;
+    }
+  </style>
+</head>
+
+<body>
 
 <html>
 
