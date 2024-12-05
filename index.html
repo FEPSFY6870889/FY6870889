@@ -156,4 +156,43 @@
 
    </script>
 
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #word-counter {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      font-size: 16px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>ENG0018 Computer Laboratory 2024/2025</h1>
+  <h2>Word Counter Tool</h2>
+
+  <textarea id="text-area" placeholder="Type or paste your text here..."></textarea>
+  <p id="word-counter">Word Count: 0</p>
+
+  <script>
+    // Word Counter Functionality
+    const textArea = document.getElementById('text-area');
+    const wordCounter = document.getElementById('word-counter');
+
+    textArea.addEventListener('input', function () {
+      const text = textArea.value.trim(); // Trim to avoid leading/trailing spaces
+      const wordCount = text === "" ? 0 : text.split(/\s+/).length; // Split by spaces
+      wordCounter.textContent = `Word Count: ${wordCount}`;
+    });
+  </script>
+</body>
+</html>
 
