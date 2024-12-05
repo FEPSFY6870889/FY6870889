@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 
-
-<body onload="showDateTime()">
-
-
-
-
-
-
 <html>
 
   <head>
@@ -79,13 +71,13 @@
     </tr>
   </table>
 
-    <a href="url">https://www.microsoft.com/en-gb/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook</a>
+
    <hr>
 
 </html>
     
     <h3 id="Abstract">Abstract</h3>
-  <p id="abstract" class="ex1">
+  <p id="Abstract" class="ex1">
 <p class="ex1">
   <pre>
     Approximately 95% of the ocean remains unexplored, revealing the significant challenges and incredible opportunities in deep-sea exploration. Oceanic research 
@@ -99,21 +91,16 @@
   </p>
 
 <h3 id="Introduction">Introduction</h3>
-<p id="introduction" class="ex1">
-<p class="ex1">
-  <pre>
+<p id="Introduction_InText" class="ex1">
     Designing self-navigating robots for deep-sea environments involves addressing the challenges of creating autonomous underwater vehicles (AUVs) that can 
     function independently in some of the Earth’s most extreme and remote conditions. Numerous obstacles must be overcome before AUVs can be fully perfected. 
     The primary goal for engineers is to develop robotic systems capable of completing long-duration missions without human intervention (Wynn et al., 2014). 
     This requires advanced technology to endure immense pressures and operate in near-total darkness. AUVs are essential for oceanographic research, resource 
     monitoring, and environmental protection in the largely unexplored depths of the ocean (Wynn et al., 2014).
-  </pre>
-</p>
+  </p>
 
 <h3 id="Mainbody">Main body</h3>
-  <p id="mainbody" class="ex1">
-<p class="ex1">
-  <pre>
+  <pre id="Mainbody_InText" class="ex1">
     The oceans, covering over 70% of the Earth's surface, present significant challenges for navigation in deep-sea environments due to the absence of GPS signals 
     at depths beyond shallow waters (Zhang B, et al., 2023). Engineers have overcome this issue by installing high-end technology into self-navigating AUVs, 
     such as acoustic, inertial, and visual navigation systems. Acoustic positioning is the process of sound waves that are transmitted and received between 
@@ -156,70 +143,58 @@
     (Hasan et al., 2024). These advancements in AUV design showcase the ingenuity of engineers in overcoming various challenges, leading to the development of 
     more efficient, durable, and sustainable underwater technologies.
   </pre>
-</p>
 
  <h3>
   <h3 id="Conclusion">Conclusion</h3>
-    <p id="conclusion" class="ex1">
-    <pre>
+    <pre id="Conclusion_InText" class="ex1">
     In conclusion, the development of AUVs has greatly advanced with the use of innovative technologies and materials, enabling these vehicles to perform in the 
     most challenging deep-sea environments. From advanced navigation systems to solar-powered charging solutions, engineers are overcoming numerous obstacles 
     to improve AUV efficiency, durability, and environmental sustainability. These advancements are vital for furthering ocean exploration and ensuring that 
     AUVs contribute to both scientific research and environmental conservation efforts.
      </pre>
-  </p>
   <h3>
   <h3 id="References">References</h3>
 <pre>
  (1) Zhang, B., Ji, D., Liu, S., Zhu, X. and Xu, W. (2023). Autonomous Underwater Vehicle navigation: A review. Ocean Engineering, 273(113861), p.113861. 
   doi:https://doi.org/10.1016/j.oceaneng.2023.113861.
- <a href=”https://www.sciencedirect.com/science/article/pii/S0029801823002457?via%3Dihub”>Zhang B, et al., 2023 </a>
+ <a href="https://www.sciencedirect.com/science/article/pii/S0029801823002457?via%3Dihub">Zhang B, et al., 2023 </a>
 
 </pre>
      
-    <p id="date&time"></p>
-  </p>
-    <script>
-      // Function to display the current date and time
-      function showDateTime() {
-        var currentDate = new Date();
-        var formattedDate = currentDate.toLocaleString();
-        document.getElementById("date&time").innerHTML = formattedDate;
-      }
-    </script>
+<!-- Placeholder for total word count -->
+<p id="totalWordCount"></p>
+<hr>
+<script>
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
+  }
+  // Function to calculate and display total word count from selected sections
+  function displayTotalWordCount() {
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const MainbodyCount = displayWordCount("Mainbody_InText");
+    const ConclusionCount = displayWordCount("Conclusion_InText");
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + MainbodyCount + ConclusionCount;
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
+</script>
 
   </body>
-    < p id="totalWordCount"></p>
-
-<hr>
-
-<script>
-
-function displayWordCount(sectionId, output) {
-
-const text = document.getElementById(sectionId).textContent;
-
-const wordArray = text.trim().split(/\s+/);
-
-const wordCount = wordArray.length;
-
-return wordCount
-}
-
-
-function displayTotalWordCount() {
-
-const IntroductionCount = displayWordCount("Introduction");
-const AbstractCount = displayWordCount("Abstract");
-const MainbodyCount = displayWordCount("MainBody");
-const ConclusionCount = displayWordCount("Conclusion");
-
-const totalWordCount =  IntroductionCount + AbstractCount + MainbodyCount + ConclusionCount;
-
-document.getElementById("totalWordCount").innerText = 'Total word count: ${totalWordCount};
-}
-
-window.onload
-
 
 </html>
+
+
+
+
