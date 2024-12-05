@@ -1,134 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Lato font -->
-  <style>
-    /* Global styles */
-    body {
-      font-family: 'Lato', sans-serif;
-      background: linear-gradient(to right, #f4f6f7, #d8e1e8); /* Light pastel gradient */
-      color: #333;
-      margin: 0;
-      padding: 0;
-      line-height: 1.8; /* Increased line height for better readability */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh; /* Full height to center content vertically */
-    }
 
-    /* Banner styles */
-    .banner {
-      background-color: #2980b9; /* Soft blue banner */
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      width: 100%;
-      font-size: 2.5em; /* Larger font for the banner */
-    }
-
-    h3 {
-      color: #2c3e50; /* Darker, clearer gray-blue for headings */
-      font-size: 2.4em; /* Larger heading size for prominence */
-      margin-top: 30px;
-      border-bottom: 2px solid #2c3e50;
-      padding-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.25em; /* Slightly larger body text */
-      line-height: 1.8em;
-      margin-bottom: 20px;
-      text-align: justify;
-      color: #2c3e50; /* Dark text for clarity */
-    }
-
-    /* Table of contents styling */
-    .toc {
-      width: 60%;
-      max-width: 500px; /* Reduced size */
-      margin: 40px auto;
-      padding: 15px;
-      background: rgba(255, 255, 255, 0.9); /* Light background for the Table of Contents */
-      border-radius: 10px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: center; /* Center the text inside the TOC */
-    }
-
-    .toc a {
-      display: block;
-      padding: 10px;
-      font-size: 1.2em; /* Slightly smaller TOC link size */
-      color: #2c3e50;
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .toc a:hover {
-      background-color: #f0f4f8; /* Very light hover effect */
-      color: #2980b9;
-    }
-
-    /* Table styling */
-    table {
-      width: 100%;
-      margin-top: 20px;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 18px;
-      text-align: left;
-      font-size: 1.15em; /* Slightly larger text for table cells */
-    }
-
-    th {
-      background-color: #2980b9; /* Soft blue for table header */
-      color: white;
-      font-size: 1.3em;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-
-    /* Buttons */
-    button {
-      padding: 12px 25px;
-      background-color: #2980b9; /* Soft blue button */
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 1.2em; /* Larger font for buttons */
-      margin: 20px 0;
-    }
-
-    button:hover {
-      background-color: #1f3d63;
-    }
-
-    /* Last Updated section */
-    #last-updated {
-      font-size: 1.25em; /* Slightly larger text for the updated time */
-      color: #7f8c8d;
-      margin-top: 10px;
-    }
-
-    /* Word count section */
-    #totalWordCount {
-      font-size: 1.3em; /* Larger font for total word count */
-      font-weight: bold;
-      color: #2980b9;
-    }
-  </style>
-</head>
-
-<body>
 
 <html>
 
@@ -295,46 +166,13 @@
      <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9856658&tag=1">Elkolali & Alcocer, 2022 </a>
   </pre>
      
-<!-- Placeholder for total word count -->
-<p id="totalWordCount"></p>
-<hr>
-<script>
-  // Function to calculate and display word count for a specified section
-  function displayWordCount(sectionId, outputId) {
-    // Get the text content from the specified section
-    const text = document.getElementById(sectionId).textContent;
-    // Split text into words based on spaces and filter out any empty strings
-    const wordArray = text.trim().split(/\s+/);
-    // Count the words
-    const wordCount = wordArray.length;
-    // Return the word count for summing purposes
-    return wordCount;
-  }
-  // Function to calculate and display total word count from selected sections
-  function displayTotalWordCount() {
-    // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction_InText");
-    const MainbodyCount = displayWordCount("Mainbody_InText");
-    const ConclusionCount = displayWordCount("Conclusion_InText");
-    // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + MainbodyCount + ConclusionCount;
-    // Display the total word count
-    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
-  }
-  // Run the function for specific sections and display total count when the page loads
-  window.onload = displayTotalWordCount;
-</script>
-  </body>
-
-   
-    <script>
-        <!-- Last commit time display -->
+ <!-- Last commit time display -->
 <div id="last-updated">Loading last update time...</div>
 <!-- Verify Button -->
 <button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
     Verify Last Modified Time
 </button>
-
+<script>
     async function getLastUpdatedTime() {
         const username = 'nr0025';
         const repo = 'FY0025';
@@ -373,10 +211,173 @@
     // Initial load to display the time on page load
     window.onload = getLastUpdatedTime;
 </script>
-  </body>
 
-</html>
 
+ <!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- Placeholder for total word count -->
+<p id="totalWordCount"></p>
+<hr>
+<script>
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
+  }
+  // Function to calculate and display total word count from selected sections
+  function displayTotalWordCount() {
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const MainbodyCount = displayWordCount("Mainbody_InText");
+    const ConclusionCount = displayWordCount("Conclusion_InText");
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + MainbodyCount + ConclusionCount;
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
+</script>
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Lato font -->
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Lato', sans-serif;
+      background: linear-gradient(to right, #f4f6f7, #d8e1e8); /* Light pastel gradient */
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8; /* Increased line height for better readability */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh; /* Full height to center content vertically */
+    }
+
+    /* Banner styles */
+    .banner {
+      background-color: #2980b9; /* Soft blue banner */
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      width: 100%;
+      font-size: 2.5em; /* Larger font for the banner */
+    }
+
+    h3 {
+      color: #2c3e50; /* Darker, clearer gray-blue for headings */
+      font-size: 2.4em; /* Larger heading size for prominence */
+      margin-top: 30px;
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.25em; /* Slightly larger body text */
+      line-height: 1.8em;
+      margin-bottom: 20px;
+      text-align: justify;
+      color: #2c3e50; /* Dark text for clarity */
+    }
+
+    /* Table of contents styling */
+    .toc {
+      width: 60%;
+      max-width: 500px; /* Reduced size */
+      margin: 40px auto;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.9); /* Light background for the Table of Contents */
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center; /* Center the text inside the TOC */
+    }
+
+    .toc a {
+      display: block;
+      padding: 10px;
+      font-size: 1.2em; /* Slightly smaller TOC link size */
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .toc a:hover {
+      background-color: #f0f4f8; /* Very light hover effect */
+      color: #2980b9;
+    }
+
+    /* Table styling */
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 18px;
+      text-align: left;
+      font-size: 1.15em; /* Slightly larger text for table cells */
+    }
+
+    th {
+      background-color: #2980b9; /* Soft blue for table header */
+      color: white;
+      font-size: 1.3em;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Buttons */
+    button {
+      padding: 12px 25px;
+      background-color: #2980b9; /* Soft blue button */
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1.2em; /* Larger font for buttons */
+      margin: 20px 0;
+    }
+
+    button:hover {
+      background-color: #1f3d63;
+    }
+
+    /* Last Updated section */
+    #last-updated {
+      font-size: 1.25em; /* Slightly larger text for the updated time */
+      color: #7f8c8d;
+      margin-top: 10px;
+    }
+
+    /* Word count section */
+    #totalWordCount {
+      font-size: 1.3em; /* Larger font for total word count */
+      font-weight: bold;
+      color: #2980b9;
+    }
+    
+  </style>
+</head>
+
+<body>
 
 
 
