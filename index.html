@@ -156,5 +156,30 @@
 
    </script>
 
+     // Date and Time
+    function updateDateTime() {
+      const now = new Date();
+      const dateString = now.toLocaleString();
+      document.getElementById("date&time").textContent = dateString;
+    }
+
+    // Update date and time every second
+    setInterval(updateDateTime, 1000);  // Update every second
+    updateDateTime();  // Initial call to show the time immediately
+
+    // Word Counter
+    const wordInput = document.getElementById('wordInput');
+    const wordCountDisplay = document.getElementById('wordCount');
+
+    wordInput.addEventListener('input', function() {
+      const text = wordInput.value.trim();
+      const wordCount = text ? text.split(/\s+/).length : 0;
+      wordCountDisplay.textContent = wordCount;
+    });
+  </script>
+
+</body>
+
+</html>
 
 
