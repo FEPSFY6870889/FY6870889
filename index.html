@@ -154,18 +154,19 @@
  <h3>
   <h3 id="Conclusion">Conclusion</h3>
     <p id="conclusion" class="ex1">
-   In my humble opinion, the development of AUVs has greatly advanced with the use of innovative technologies and materials, enabling these vehicles to perform in the most 
-   challenging deep-sea environments. From advanced navigation systems to solar-powered charging solutions, engineers are overcoming numerous obstacles to improve
-   AUV efficiency, durability, and environmental sustainability. These advancements are vital for furthering ocean exploration and ensuring that AUVs contribute 
-   to both scientific research and environmental conservation efforts.
+    In conclusion, the development of AUVs has greatly advanced with the use of innovative technologies and materials, enabling these vehicles to perform in the 
+    most challenging deep-sea environments. From advanced navigation systems to solar-powered charging solutions, engineers are overcoming numerous obstacles 
+    to improve AUV efficiency, durability, and environmental sustainability. These advancements are vital for furthering ocean exploration and ensuring that 
+    AUVs contribute to both scientific research and environmental conservation efforts.
    <h3>
   <h3 id="References">References</h3>
 <p>
 <pre>
-   
+   ///
 </pre>
 
-     <p id="date&time"></p>
+     
+    <p id="date&time"></p>
     <p id="wordCounter"></p>
 
     <script>
@@ -176,17 +177,24 @@
         document.getElementById("date&time").innerHTML = formattedDate;
       }
 
-      // Function to count the words in specific sections (Abstract, Introduction, Main Body, Conclusion)
+      // Function to count words in the Abstract, Introduction, Main Body, and Conclusion sections
       function countWordsInSections() {
         var abstractText = document.getElementById("abstract").innerText;
         var introductionText = document.getElementById("introduction").innerText;
         var mainBodyText = document.getElementById("mainbody").innerText;
         var conclusionText = document.getElementById("conclusion").innerText;
 
+        // Combine all texts into one string
         var allText = abstractText + " " + introductionText + " " + mainBodyText + " " + conclusionText;
-        var words = allText.split(/\s+/);
+
+        // Remove any extra spaces or line breaks
+        var cleanedText = allText.replace(/\s+/g, ' ').trim();
+
+        // Split the text into words and count the number of words
+        var words = cleanedText.split(' ');
         var wordCount = words.length;
 
+        // Display the word count
         document.getElementById("wordCounter").innerHTML = "Word Count (Abstract, Introduction, Main Body, Conclusion): " + wordCount;
       }
 
@@ -197,5 +205,6 @@
     </script>
 
   </body>
+
 </html>
 
