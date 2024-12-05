@@ -156,13 +156,12 @@
 
    </script>
 
-    <!-- Date and Time Section -->
+ <!-- Date and Time Section -->
   <h3>Current Date and Time</h3>
   <p id="date&time"></p>
 
   <!-- Word Counter Section -->
-  <h3>Word Counter</h3>
-  <textarea id="wordInput" rows="6" cols="50" placeholder="Start typing here..."></textarea>
+  <h3>Word Counter (Total Words in Webpage)</h3>
   <p>Word Count: <span id="wordCount">0</span></p>
 
   <footer>
@@ -181,19 +180,23 @@
     setInterval(updateDateTime, 1000);  // Update every second
     updateDateTime();  // Initial call to show the time immediately
 
-    // Word Counter
-    const wordInput = document.getElementById('wordInput');
-    const wordCountDisplay = document.getElementById('wordCount');
+    // Word Counter (for entire webpage content)
+    function countWordsInPage() {
+      const bodyText = document.body.innerText;  // Get the visible text from the page
+      const words = bodyText.trim().split(/\s+/); // Split by whitespace (spaces, newlines, etc.)
+      const wordCount = words.length;
+      document.getElementById('wordCount').textContent = wordCount;
+    }
 
-    wordInput.addEventListener('input', function() {
-      const text = wordInput.value.trim();
-      const wordCount = text ? text.split(/\s+/).length : 0;
-      wordCountDisplay.textContent = wordCount;
-    });
+    // Count words when the page loads
+    window.onload = countWordsInPage;
+
+    // Optional: Recalculate word count if content changes dynamically (like with editing tools or AJAX)
+    // For this, you could use MutationObserver to watch for changes to the page.
   </script>
 
 </body>
 
-</html>
+</html> 
 
 
