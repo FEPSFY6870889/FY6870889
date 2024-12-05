@@ -189,5 +189,37 @@
     </script>
 
   </body>
+    < p id="totalWordCount"></p>
+
+<hr>
+
+<script>
+
+function displayWordCount(sectionId, output) {
+
+const text = document.getElementById(sectionId).textContent;
+
+const wordArray = text.trim().split(/\s+/);
+
+const wordCount = wordArray.length;
+
+return wordCount
+}
+
+
+function displayTotalWordCount() {
+
+const IntroductionCount = displayWordCount("Introduction");
+const AbstractCount = displayWordCount("Abstract");
+const MainbodyCount = displayWordCount("MainBody");
+const ConclusionCount = displayWordCount("Conclusion");
+
+const totalWordCount =  IntroductionCount + AbstractCount + MainbodyCount + ConclusionCount;
+
+document.getElementById("totalWordCount").innerText = 'Total word count: ${totalWordCount};
+}
+
+window.onload
+
 
 </html>
