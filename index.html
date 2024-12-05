@@ -156,7 +156,21 @@
 
    </script>
 
-     // Date and Time
+    <!-- Date and Time Section -->
+  <h3>Current Date and Time</h3>
+  <p id="date&time"></p>
+
+  <!-- Word Counter Section -->
+  <h3>Word Counter</h3>
+  <textarea id="wordInput" rows="6" cols="50" placeholder="Start typing here..."></textarea>
+  <p>Word Count: <span id="wordCount">0</span></p>
+
+  <footer>
+    <p>Footer Content</p>
+  </footer>
+
+  <script>
+    // Date and Time
     function updateDateTime() {
       const now = new Date();
       const dateString = now.toLocaleString();
